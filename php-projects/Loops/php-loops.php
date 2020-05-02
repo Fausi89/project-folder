@@ -149,9 +149,97 @@ foreach loops are used for iterating over the elements of an array. The key and 
 break is used to end execution of a loop early.
 continue is used to end execution of a loop iteration early and continues to the next iteration. */
 
+//Some examples of embedded PHP loops in HTML 
+  
+  <ul>
+<?php
+for ($i = 0; $i < 2; $i++):
+?>
+<li>Duck</li>
+<?php
+endfor;
+?>
+<li>Goose</li>
+</ul>
 
-  
-  
+
+<ul>
+<?php
+$array = [0, 1];
+foreach ($array as $i):
+?>
+<li>Duck</li>
+<?php
+endforeach;
+?>
+<li>Goose</li>
+</ul>
+
+
+
+
+<h1>Only Shoes Shoe Shop</h1>
+<?php
+$i = 0;
+$repeats = [0, 1];
+while ($i < 5):
+?>
+<p>We sell shoes</p>
+  <?php
+  foreach ($repeats as $value):
+  ?>
+  <p>(only shoes)</p>
+  <?php
+  endforeach;
+  ?>
+<?php
+  $i++;
+endwhile;
+?>
+
+<?php
+$array = ["Alice", "Bob", "Charlie"];
+foreach($array as $name): ?>
+<p><?=$name?></p>
+<?php endforeach; ?>
+
+
+
+
+<h1>Shoe Shop</h1>
+<?php
+$footwear = [
+  "sandals" => 4,
+  "sneakers" => 7,
+	"boots" => 3
+];
+?>
+<p>Our footwear:</p>
+<?php
+foreach ($footwear as $type => $brands):
+?>
+<p>We sell <?=$brands?> brands of <?=$type?></p>
+<?php
+endforeach;
+?>
+
+
+
+/* LOOPS IN HTML
+Review
+With the PHP shorthand you have just learned, you can now create more readable HTML files with embedded PHP loops.
+
+Here are the key ideas from this lesson:
+
+The PHP shorthand for loops uses a colon (:) instead of a bracket ({) to open the code block.
+The shorthand uses keywords to close the code block instead of a bracket (}):
+Use endfor to close a for loop
+Use endforeach to close a foreach loop
+Use endwhile to close a while loop
+The closing keyword needs to be followed by a semicolon (;).
+Make sure to re-enter PHP mode using <?php or the echo shorthand <?= before using PHP variables in the loop */
+
+
   
   
   
